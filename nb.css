@@ -1,34 +1,45 @@
-ul{
+#cards{
     height: 450px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-li{
-    width: 100px;
-    height: 100px;
+.cardOuter, .cardInner, .card, .cardBack{
+    width: 120px;
+    height: 120px;
     border: 1px solid #000000;
     list-style: none;
+}
+
+.cardOuter{
     margin: 25px;
-}
- 
-.card1{
-    background-color: red;
+    perspective: 800px;
+    -webkit-perspective: 800px;
 }
 
-.card2{
-    background-color: yellow;
+.cardInner {
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
-.card3{
-    background-color: green;
+.card, .cardBack{
+    background: #fff;
 }
 
-.card4{
-    background-color: blue;
+.cardOuter .card{
+    box-sizing: border-box;
+    display: none;
+    border: 1px solid #ccc;
+    background: #fff;
 }
 
-.card5{
-    background-color: pink;
+.card img{
+    width: 120px;
+    height: 120px;
+}
+
+.cardOuter.reverse .cardBack {
+    display: none;
 }
