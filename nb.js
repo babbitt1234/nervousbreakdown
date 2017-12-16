@@ -1,17 +1,28 @@
 $(function(){
+    
+    var cl = console.log;
 
     function shuffle(){
         var arr = [];
         $('#cards .card').each(function() {
             arr.push($(this).html());
         });
+        
         arr.sort(function() {
             return Math.random() - Math.random();
         });
         $('#cards').empty();
         for(i = 0; i < arr.length; i++) {
-
-             $('#cards').append('<div class="cardOuter"><div class="cardInner">' +'<div class="card">'+ arr[i] + '</div>' + '<div class="cardBack"><img src="card.jpg" alt=""></div></div></div>');
+             $('#cards').append(
+                 '<div class="cardOuter">'
+                 + '<div class="cardInner">'
+                 + '<div class="card">'
+                 + arr[i]
+                 + '</div>'
+                 + '<div class="cardBack">'
+                 + '</div>'
+                 + '</div>'
+                 + '</div>');
         }
     }
     shuffle();
@@ -24,11 +35,11 @@ $(function(){
             turn = false,
             turn_cls = 'reverse';
 
-    var rotate_anm = function(){
-        elm_in.css({
-            'transform' : 'rotateY(' + deg * -2 + 'deg)'
-        });
-    };
+        var rotate_anm = function(){
+            elm_in.css({
+                'transform' : 'rotateY(' + deg * -2 + 'deg)'
+            });
+        };
 
         var rotate = function(){
             setTimeout(function(){
@@ -48,7 +59,7 @@ $(function(){
                     deg += 3;
                     rotate();
                 } else {
-                    deg = 0;
+//                    deg = 0;
                     elm_in.attr('style', '');
                     if( turn === false ){
                         turn = true;
@@ -58,14 +69,19 @@ $(function(){
                 }
             }, 5);
         };
-
         btn.click(function(){
             rotate();
         });
+        
+//        btn.one('click',function(){
+//            rotate();
+//            return false;
+//        });
     };
 
     $('.cardOuter').each(function(){
         $(this).rotate_box();
+        
     });
    
 });
