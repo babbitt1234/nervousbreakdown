@@ -1,9 +1,10 @@
 $(function(){
     
     var cl = console.log;
+    var arr = [];
+    var index;
 
     function shuffle(){
-        var arr = [];
         $('#cards .card').each(function() {
             arr.push($(this).html());
         });
@@ -11,12 +12,16 @@ $(function(){
         arr.sort(function() {
             return Math.random() - Math.random();
         });
+        
         $('#cards').empty();
         for(i = 0; i < arr.length; i++) {
              $('#cards').append(
                  '<div class="cardOuter">'
                  + '<div class="cardInner">'
-                 + '<div class="card">'
+                 + '<div class="card"'
+                 + ' id="card'
+                 + i 
+                 + '">'
                  + arr[i]
                  + '</div>'
                  + '<div class="cardBack">'
@@ -55,7 +60,7 @@ $(function(){
                 if( deg <= 45 ){
                     deg += 3;
                     rotate();
-                } else if( deg < 360 && deg > 45 ) {
+                } else if( deg < 360) {
                     deg += 3;
                     rotate();
                 } else {
@@ -69,19 +74,28 @@ $(function(){
                 }
             }, 5);
         };
-        btn.click(function(){
+//        btn.click(function(){
             rotate();
-        });
-        
-//        btn.one('click',function(){
-//            rotate();
-//            return false;
+            $('.card', this).children('img').attr('src');
+            index = $('.card').index(this);
+//            index1 = index;
 //        });
+        cl($('.card', this).children('img').attr('src'));
+        cl(index);
     };
 
-    $('.cardOuter').each(function(){
+//    var clickNum = 0;
+    
+    $('.cardOuter').click(function(){
         $(this).rotate_box();
-        
+//        clickNum++;
+//        if(clickNum == 1)
     });
-   
+    
 });
+
+
+//    $('.cardOuter').each(function(){
+//        $(this).rotate_box();
+//    });
+    
