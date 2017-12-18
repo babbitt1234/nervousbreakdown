@@ -2,10 +2,14 @@ $(function(){
     
     var cl = console.log;
     var arr = [];
-    var index;
-
+    var cardNum;
+    var cardNum2;
+    var cardId;
+    var cardId2;
+    var clickNum = 0;
+    
     function shuffle(){
-        $('#cards .card').each(function() {
+        $('.board .card').each(function() {
             arr.push($(this).html());
         });
         
@@ -13,89 +17,68 @@ $(function(){
             return Math.random() - Math.random();
         });
         
-        $('#cards').empty();
+        $('.board').empty();
         for(i = 0; i < arr.length; i++) {
-             $('#cards').append(
-                 '<div class="cardOuter">'
-                 + '<div class="cardInner">'
-                 + '<div class="card"'
-                 + ' id="card'
-                 + i 
-                 + '">'
+             $('.board').append(
+                 '<div class="card">'
                  + arr[i]
-                 + '</div>'
-                 + '<div class="cardBack">'
-                 + '</div>'
-                 + '</div>'
                  + '</div>');
         }
     }
     shuffle();
     
-    $.fn.rotate_box = function(){
-        var	elm = $(this),
-            elm_in = $('.cardInner', this),
-            btn = $('.card, .cardBack', elm),
-            deg = 0,
-            turn = false,
-            turn_cls = 'reverse';
-
-        var rotate_anm = function(){
-            elm_in.css({
-                'transform' : 'rotateY(' + deg * -2 + 'deg)'
-            });
-        };
-
-        var rotate = function(){
-            setTimeout(function(){
-                rotate_anm();
-                if( deg == 45 ){
-                    if( turn === false ){
-                        elm.addClass(turn_cls);
-                    } else {
-                        elm.removeClass(turn_cls);
-                    }
-                    deg = 315;
-                }
-                if( deg <= 45 ){
-                    deg += 3;
-                    rotate();
-                } else if( deg < 360) {
-                    deg += 3;
-                    rotate();
-                } else {
-//                    deg = 0;
-                    elm_in.attr('style', '');
-                    if( turn === false ){
-                        turn = true;
-                    } else {
-                        turn = false;
-                    }
-                }
-            }, 5);
-        };
-//        btn.click(function(){
-            rotate();
-            $('.card', this).children('img').attr('src');
-            index = $('.card').index(this);
-//            index1 = index;
-//        });
-        cl($('.card', this).children('img').attr('src'));
-        cl(index);
-    };
-
-//    var clickNum = 0;
-    
-    $('.cardOuter').click(function(){
-        $(this).rotate_box();
-//        clickNum++;
-//        if(clickNum == 1)
+    $('.card11_1').mousedown(function(){
+        $(this).attr("src", "img/card1.jpg");
     });
     
+    $('.card11_2').mousedown(function(){
+        $(this).attr("src", "img/card1.jpg");
+    });
+    
+    $('.card12_1').mousedown(function(){
+        $(this).attr("src", "img/card2.jpg");
+    });
+    
+    $('.card12_2').mousedown(function(){
+        $(this).attr("src", "img/card2.jpg");
+    });
+    
+    $('.card13_1').mousedown(function(){
+        $(this).attr("src", "img/card3.jpg");
+    });
+    
+    $('.card13_2').mousedown(function(){
+        $(this).attr("src", "img/card3.jpg");
+    });
+    
+    $('.card').click(function(){
+        if(clickNum == 0){
+            cardNum = $(this).children('img').attr('src');
+            cardId = $(this).children('img').attr('class');
+            cl(cardId);
+            clickNum++;
+        }else{
+            cardNum2 = $(this).children('img').attr('src');
+            cardId2 = $(this).children('img').attr('class');
+            cl(cardId2);
+            clickNum = 0;
+            if(cardNum == cardNum2){
+                alert('good');
+                cardNum = '';
+                cardNUm2 = '';
+                cardId = '';
+                cardId2 = '';
+            }else{
+                $('.' + cardId).attr("src", "img/card11.jpg");
+                $('.' + cardId2).attr("src", "img/card11.jpg");
+                cardNum = '';
+                cardNUm2 = '';
+                cardId = '';
+                cardId2 = '';
+            }
+           
+        }
+    });
+        
 });
 
-
-//    $('.cardOuter').each(function(){
-//        $(this).rotate_box();
-//    });
-    

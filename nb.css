@@ -1,42 +1,80 @@
-#cards {
-    width: 100%;
-    height: 400px;
+.board{
     height: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-    
-.cardOuter,
-.cardInner,
-.cardOuter .card,
-.cardOuter .cardBack {
-    width: 120px;
-    height: 120px;
-    border-radius: 6px;
-    margin: 10px;
+
+/*
+.card{
+    position: absolute;
+}
+*/
+
+/*#card1_1{*/
+/*    position: relative;*/
+/*    z-index: 0;*/
+/*    background: url(img/card11.jpg);*/
+/*    display:none;*/
+/*}*/
+
+/*#card11_1{*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    display: none;*/
 }
 
-.cardInner {
-    cursor: pointer;
-    overflow: hidden;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+/*#card1_2{*/
+/*    position: absolute;*/
+/*    z-index: 0;*/
 }
 
-.cardOuter .card {
-    box-sizing: border-box;
-    display: none;
-    border: 1px solid #ccc;
-    background: #fff;
+/*#card11_2{*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    display: none;*/
 }
-.cardOuter .card img {
-    width: 120px;
-    height: 120px;
+
+/*#card2_1{*/
+/*    position: absolute;*/
+/*    z-index: 0;*/
 }
-.cardOuter .cardBack {
-    display: table-cell;
-    background: url(card.jpg);
+
+/*#card12_1{*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    display: none;*/
+/*}*/
+
+/*#card2_2{*/
+/*    position: absolute;*/
+/*    z-index: 0;*/
+/*}*/
+
+/*#card12_2{*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    display: none;*/
+/*}*/
+
+/*#card3_1{*/
+/*    position: absolute;*/
+/*    z-index: 0;*/
+/*}*/
+
+/*#card13_1{*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    display: none;*/
+/*}*/
+
+/*#card3_2{*/
+/*    position: absolute;*/
+/* */
 }
-.cardOuter.reverse .card {
-    display: table-cell;
-}
+
+/*#card13_2{*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    display: none;*/
+/*}*/
