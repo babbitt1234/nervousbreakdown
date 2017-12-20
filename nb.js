@@ -27,28 +27,68 @@ $(function(){
     }
     shuffle();
     
-    $('.card11_1').mousedown(function(){
+    $('.card1_1').mousedown(function(){
         $(this).attr("src", "img/card1.jpg");
     });
     
-    $('.card11_2').mousedown(function(){
+    $('.card1_2').mousedown(function(){
         $(this).attr("src", "img/card1.jpg");
     });
     
-    $('.card12_1').mousedown(function(){
+    $('.card2_1').mousedown(function(){
         $(this).attr("src", "img/card2.jpg");
     });
     
-    $('.card12_2').mousedown(function(){
+    $('.card2_2').mousedown(function(){
         $(this).attr("src", "img/card2.jpg");
     });
     
-    $('.card13_1').mousedown(function(){
+    $('.card3_1').mousedown(function(){
         $(this).attr("src", "img/card3.jpg");
     });
     
-    $('.card13_2').mousedown(function(){
+    $('.card3_2').mousedown(function(){
         $(this).attr("src", "img/card3.jpg");
+    });
+    
+    $('.card4_1').mousedown(function(){
+        $(this).attr("src", "img/card4.jpg");
+    });
+    
+    $('.card4_2').mousedown(function(){
+        $(this).attr("src", "img/card4.jpg");
+    });
+    
+    $('.card5_1').mousedown(function(){
+        $(this).attr("src", "img/card5.jpg");
+    });
+    
+    $('.card5_2').mousedown(function(){
+        $(this).attr("src", "img/card5.jpg");
+    });
+    
+    $('.card6_1').mousedown(function(){
+        $(this).attr("src", "img/card6.jpg");
+    });
+    
+    $('.card6_2').mousedown(function(){
+        $(this).attr("src", "img/card6.jpg");
+    });
+    
+    $('.card7_1').mousedown(function(){
+        $(this).attr("src", "img/card7.jpg");
+    });
+    
+    $('.card7_2').mousedown(function(){
+        $(this).attr("src", "img/card7.jpg");
+    });
+    
+    $('.card8_1').mousedown(function(){
+        $(this).attr("src", "img/card8.jpg");
+    });
+    
+    $('.card8_2').mousedown(function(){
+        $(this).attr("src", "img/card8.jpg");
     });
     
     $('.card').click(function(){
@@ -69,8 +109,8 @@ $(function(){
                 cardId = '';
                 cardId2 = '';
             }else{
-                $('.' + cardId).attr("src", "img/card11.jpg");
-                $('.' + cardId2).attr("src", "img/card11.jpg");
+                $('.' + cardId).attr("src", "img/card100.jpg");
+                $('.' + cardId2).attr("src", "img/card100.jpg");
                 cardNum = '';
                 cardNUm2 = '';
                 cardId = '';
